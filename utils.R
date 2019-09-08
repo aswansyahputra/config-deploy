@@ -57,7 +57,7 @@ deploy_web <- function(publish_dir = "public", commit_message = rstudioapi::show
   
   usethis::ui_todo("Pushing changes to GitHub")
 
-    cred <- cred_user_pass(
+  cred <- git2r::cred_user_pass(
     username = rstudioapi::askForPassword("GitHub username"), 
     password = rstudioapi::askForPassword("GitHub password")
   )
