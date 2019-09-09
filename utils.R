@@ -1,3 +1,5 @@
+#' Check dependencies
+
 #' Configuration
 #' 
 #' Prepare publish directory for deployment.
@@ -13,6 +15,10 @@ config_web <- function(publish_dir = "public", remote_repo = rstudioapi::showPro
   
   if (!dir.exists(publish_dir)) {
     dir.create(publish_dir)
+  }
+  
+  if (dir.exists(".git")) {
+    usethis::use_git_ignore(publish_dir)
   }
   
   if (!file.exists(paste0(publish_dir, "/.nojekyll"))) {
