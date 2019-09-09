@@ -35,8 +35,6 @@ config_web <- function(publish_dir = "public", remote_repo = rstudioapi::showPro
   git2r::commit(publish_dir, message = "Initialize website")
   
   usethis::ui_done("Publish directory is ready")
-  usethis::ui_info("Don't forget to add following line into ignoreFiles field in config.toml")
-  usethis::ui_code_block('"\\.Rmarkdown$"')
 }
 
 #' Build and deploy
